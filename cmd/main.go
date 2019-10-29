@@ -154,6 +154,10 @@ func main() {
 				msg := tgbotapi.NewMessage(update.Message.Chat.ID, "@"+update.Message.From.String()+" Я сломался, извини :(")
 				bot.Send(msg)
 			}
+		if update.Message.Command() == "random" {
+			update.Message.Command = Random("randomtits","randombutt")
+			
+			}
 		} else {
 			log.Print("Unknown command: " + update.Message.Text + " from user @" + update.Message.From.String())
 		}
